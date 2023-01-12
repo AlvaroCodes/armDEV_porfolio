@@ -1,0 +1,84 @@
+---
+interface Props{
+  title: String
+  infoAbout: String
+}
+
+const { title, infoAbout } = Astro.props;
+---
+
+
+<div class="firstAnimation">
+    <div class="secondAnimation">
+        <div class="card">
+          <h2>{title}</h2>
+          <p>{infoAbout}</p>
+        </div>
+    </div>
+</div>
+<style>
+  :root {
+    --card-width: 20vw;
+    --card-height: 200px;
+  }
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  background: rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 20px;
+
+  color: var(--dark-color);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+.card p {
+  width: 65%;
+  font-family: var(--content-titillium);
+}
+
+.card:hover {
+  width: var(--card-width);
+  height: var(--card-height);
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 20px;
+  background-color: #dfdfdf;
+  transition: all .5s;
+
+  color: var(--light-color);
+}
+
+.secondAnimation {
+  --hoverContorno: #959595;
+}
+
+.secondAnimation:hover,
+.secondAnimation:focus {
+  -webkit-animation: cardAnimacion 1.4s;
+  animation: cardAnimacion 1.4s;
+  box-shadow: 0 0 0 0.8em rgba(255, 255, 255, 0);
+  border-radius: 20px;
+}
+
+@-webkit-keyframes cardAnimacion {
+  0% {
+    box-shadow: 0 0 0 0 var(--hoverContorno);
+  }
+}
+
+@keyframes cardAnimacion {
+  0% {
+    box-shadow: 0 0 0 0 var(--hoverContorno);
+  }
+}
+
+
+
+
+</style>

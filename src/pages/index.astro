@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Animation from '../components/Animation/Animation.astro';
+import Card from '../components/Card/Card.astro';
+import NavBarABout from '../components/navBarABout/NavBarABout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	{
+		<main class="indexContent">
+			<section class="indexABoutMe">
+				<Animation/>
+				<h1 class="indexContent_title">armDEV</h1>
+				<NavBarABout/>
+			</section>
+
+
+			<section class="indexknowledge">
+				<div class="indexknowledge_content">
+					<Card title={'FRONT-END'} infoAbout={'TypeScript, React, Astro, Next.js...'}/>
+					<Card title={'BACK-END'} infoAbout={'NodeJS, Python, MongoDB, Postgresql...'}/>
+				</div>
+
+				<div class="indexknowledge_content">
+					<Card title={'DEPLOY'} infoAbout={'Netlify, Heroku...'}/>
+					<Card title={'OTHER'} infoAbout={'Security, ...'}/>
+				</div>
+			</section>
+		</main>
+	}
+</Layout>
+
+<style>
+	.indexContent {
+		widows: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 100px;
+	}
+
+	.indexContent_title {
+		position: absolute;
+		left: 13%;
+		top: 40%;
+		color: var(--dark-color);
+		font-size: 4rem;
+	}
+
+	.indexABoutMe {
+		width: 40%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 150px;
+	}
+
+	.indexknowledge {
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+	}
+
+	.indexknowledge_content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+</style>
